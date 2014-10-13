@@ -266,11 +266,11 @@ void linkit_sms_read_callback(vm_sms_callback_t* callback_data)
 
         int size = vm_wstrlen((VMWCHAR*)msg->msg_data->number);
         g_linkit_sms_number_buf = (char*)vm_malloc(size+1);
-        vm_ucs2_to_ascii(g_linkit_sms_number_buf, size, (VMWCHAR*)msg->msg_data->number);
+        vm_ucs2_to_ascii(g_linkit_sms_number_buf, size+1, (VMWCHAR*)msg->msg_data->number);
 
         // assume dcs = UCS2
         g_linkit_sms_content_buf = (char*)vm_malloc(msg->msg_data->content_buff_size/2+1);
-        vm_ucs2_to_ascii(g_linkit_sms_content_buf, msg->msg_data->content_buff_size/2, (VMWCHAR*)msg->msg_data->content_buff);
+        vm_ucs2_to_ascii(g_linkit_sms_content_buf, msg->msg_data->content_buff_size/2+1, (VMWCHAR*)msg->msg_data->content_buff);
 
         dest->number = g_linkit_sms_number_buf;
         dest->content = g_linkit_sms_content_buf;

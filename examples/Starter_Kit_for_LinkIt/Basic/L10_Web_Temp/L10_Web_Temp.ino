@@ -25,6 +25,8 @@ LWiFiServer server(80);
 
 
 float tp = 0.0;
+
+
 float getTemperature()
 {
     tp += 0.01;
