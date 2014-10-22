@@ -551,7 +551,7 @@ boolean linkit_file_available_handler(void* userdata)
     else
     {
         size -= pos;
-        data->result = size > 0x7FFF ? 0x7FFF : 0;  // follow Arduino File.cpp's rule
+        data->result = size > 0x7FFF ? 0x7FFF : size;  // follow Arduino File.cpp's rule
     }
     
     return true;
