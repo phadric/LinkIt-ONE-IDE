@@ -20,7 +20,8 @@
 #include <LStorage.h>
 
 
-#define Drv LFlash
+#define Drv LFlash          // use Internal 10M Flash
+// #define Drv LSD           // use SD card
 
 LFile myFile;
 
