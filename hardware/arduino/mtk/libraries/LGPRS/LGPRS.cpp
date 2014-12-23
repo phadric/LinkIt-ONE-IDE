@@ -72,7 +72,7 @@ boolean LGPRSClass::gprsCheckSIM(void *userData)
 
     // Query HOME PLMN à this is added to read home plmn
                 char plmnName[255] = {0};
-                vm_sim_get_home_plmn(VM_SIM_SIM1, plmnName, sizeof(plmnName));
+                // vm_sim_get_home_plmn(VM_SIM_SIM1, plmnName, sizeof(plmnName));
                 Serial.print("Home PLMN is: ");
                 Serial.println(plmnName);
 
