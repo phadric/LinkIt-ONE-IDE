@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iom640.h,v 1.2.2.5 2008/10/17 23:27:49 arcanum Exp $ */
+/* $Id: iom640.h 2102 2010-03-16 22:52:39Z joerg_wunsch $ */
 
 /* avr/iom640.h - definitions for ATmega640 */
 

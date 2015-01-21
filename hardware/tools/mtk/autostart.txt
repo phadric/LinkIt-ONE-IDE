@@ -1,2 +1,0 @@
-[autostart]
-App=C:\MRE\AT_GSM.cpp.vxp

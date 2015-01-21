@@ -117,10 +117,12 @@ you may want to remove the leading D.
 /* Interrupt vectors */
 
 /* Transmission Done, Bit Timer Flag 2 Interrupt */
+#define TXDONE_vect_num		1
 #define TXDONE_vect			_VECTOR(1)
 #define SIG_TXDONE			_VECTOR(1)
 
 /* Transmit Buffer Empty, Bit Itmer Flag 0 Interrupt */
+#define TXEMPTY_vect_num		2
 #define TXEMPTY_vect			_VECTOR(2)
 #define SIG_TXBE			_VECTOR(2)
 
@@ -285,7 +287,7 @@ you may want to remove the leading D.
 
 /* Constants */
 #define RAMEND      0xDF
-#define XRAMEND     0xDF
+#define XRAMEND     RAMEND
 #define E2END       0x7F
 #define E2PAGESIZE  0
 #define FLASHEND    0x07FF

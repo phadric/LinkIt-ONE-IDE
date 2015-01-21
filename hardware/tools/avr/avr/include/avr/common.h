@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: common.h,v 1.3.4.3 2008/03/24 17:11:06 arcanum Exp $ */
+/* $Id$ */
 
 
 #ifndef _AVR_COMMON_H
@@ -187,6 +187,18 @@ keep the EEPROM-related definitions here.
 #    define EERIE  (3)
 #  endif
 
+
+/* RAM Page Z Select Register	*/
+#ifndef RAMPZ
+#  if     defined(__AVR_HAVE_RAMPZ__) && __AVR_HAVE_RAMPZ__
+#    if     __AVR_ARCH__ >= 100
+#      define RAMPZ	_SFR_MEM8(0x3B)
+#    else
+#      define RAMPZ	_SFR_IO8(0x3B)
+#    endif
+#  endif
+#endif
+
 #endif /* __COMPILING_AVR_LIBC__ */
 
 
@@ -247,6 +259,36 @@ and families.
 #    define AVR_STACK_POINTER_LO_ADDR  _SFR_MEM_ADDR(SPL)
 #  else
 #    define AVR_STACK_POINTER_LO_ADDR  _SFR_IO_ADDR(SPL)
+#  endif
+#endif
+
+/* RAMPD Register */
+#if defined(RAMPD)
+#  define AVR_RAMPD_REG   RAMPD
+#  if __AVR_ARCH__ >= 100
+#    define AVR_RAMPD_ADDR  _SFR_MEM_ADDR(RAMPD)
+#  else
+#    define AVR_RAMPD_ADDR  _SFR_IO_ADDR(RAMPD)
+#  endif
+#endif
+
+/* RAMPX Register */
+#if defined(RAMPX)
+#  define AVR_RAMPX_REG   RAMPX
+#  if __AVR_ARCH__ >= 100
+#    define AVR_RAMPX_ADDR  _SFR_MEM_ADDR(RAMPX)
+#  else
+#    define AVR_RAMPX_ADDR  _SFR_IO_ADDR(RAMPX)
+#  endif
+#endif
+
+/* RAMPY Register */
+#if defined(RAMPY)
+#  define AVR_RAMPY_REG   RAMPY
+#  if __AVR_ARCH__ >= 100
+#    define AVR_RAMPY_ADDR  _SFR_MEM_ADDR(RAMPY)
+#  else
+#    define AVR_RAMPY_ADDR  _SFR_IO_ADDR(RAMPY)
 #  endif
 #endif
 

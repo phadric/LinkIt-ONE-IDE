@@ -30,7 +30,7 @@
 
 /* avr/iom164.h - definitions for ATmega164 */
 
-/* $Id: iom164.h,v 1.3.2.4 2008/08/14 00:08:01 arcanum Exp $ */
+/* $Id: iom164.h 2115 2010-04-05 23:19:53Z arcanum $ */
 
 #ifndef _AVR_IOM164_H_
 #define _AVR_IOM164_H_ 1
@@ -39,8 +39,9 @@
 
 /* Constants */
 #define SPM_PAGESIZE    128
+#define RAMSTART        (0x100)
 #define RAMEND          0x04FF
-#define XRAMEND         0x04FF
+#define XRAMEND         RAMEND
 #define E2END           0x1FF
 #define E2PAGESIZE      4
 #define FLASHEND        0x3FFF
@@ -83,6 +84,12 @@
 #define __LOCK_BITS_EXIST
 #define __BOOT_LOCK_BITS_0_EXIST
 #define __BOOT_LOCK_BITS_1_EXIST 
+
+
+/* Signature (ATmega164P) */
+#define SIGNATURE_0 0x1E
+#define SIGNATURE_1 0x94
+#define SIGNATURE_2 0x0A 
 
 
 #endif /* _AVR_IOM164_H_ */

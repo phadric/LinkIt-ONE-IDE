@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn45.h,v 1.3.2.5 2008/10/17 23:27:52 arcanum Exp $ */
+/* $Id: iotn45.h 2115 2010-04-05 23:19:53Z arcanum $ */
 
 /* avr/iotn45.h - definitions for ATtiny45 */
 
@@ -39,8 +39,9 @@
 
 /* Constants */
 #define SPM_PAGESIZE 64
+#define RAMSTART     (0x60)
 #define RAMEND       0x15F
-#define XRAMEND      0x15F
+#define XRAMEND      RAMEND
 #define E2END        0xFF
 #define E2PAGESIZE   4
 #define FLASHEND     0xFFF

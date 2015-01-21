@@ -28,12 +28,17 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: fuse.h,v 1.3.2.5 2008/07/18 20:32:14 arcanum Exp $ */
+/* $Id$ */
 
 /* avr/fuse.h - Fuse API */
 
 #ifndef _AVR_FUSE_H_
 #define _AVR_FUSE_H_ 1
+
+/* This file must be explicitly included by <avr/io.h>. */
+#if !defined(_AVR_IO_H_)
+#error "You must #include <avr/io.h> and not <avr/fuse.h> by itself."
+#endif
 
 
 /** \file */
@@ -218,7 +223,7 @@
 #ifndef __ASSEMBLER__
 
 #ifndef FUSEMEM
-#define FUSEMEM  __attribute__((section (".fuse")))
+#define FUSEMEM  __attribute__((__used__, __section__ (".fuse")))
 #endif
 
 #if FUSE_MEMORY_SIZE > 3
@@ -255,9 +260,14 @@ typedef struct
 
 #endif
 
-#ifndef FUSES
-#define FUSES __fuse_t __fuse FUSEMEM
+#if !defined(FUSES)
+  #if defined(__AVR_XMEGA__)
+    #define FUSES NVM_FUSES_t __fuse FUSEMEM
+  #else
+    #define FUSES __fuse_t __fuse FUSEMEM
+  #endif
 #endif
+
 
 #endif /* !__ASSEMBLER__ */
 

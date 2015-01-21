@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iocan64.h,v 1.2.2.5 2008/10/17 23:27:46 arcanum Exp $ */
+/* $Id: iocan64.h 2102 2010-03-16 22:52:39Z joerg_wunsch $ */
 
 /* iocan64.h - definitions for CAN64 */
 

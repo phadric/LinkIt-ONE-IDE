@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: io2343.h,v 1.9.2.3 2008/08/14 00:07:59 arcanum Exp $ */
+/* $Id: io2343.h 2225 2011-03-02 16:27:26Z arcanum $ */
 
 /* avr/io2343.h - definitions for AT90S2343 */
 
@@ -102,10 +102,12 @@
 /* Interrupt vectors */
 
 /* External Interrupt 0 */
+#define INT0_vect_num		1
 #define INT0_vect			_VECTOR(1)
 #define SIG_INTERRUPT0			_VECTOR(1)
 
 /* Timer/Counter0 Overflow */
+#define TIMER0_OVF0_vect_num	2
 #define TIMER0_OVF0_vect		_VECTOR(2)
 #define SIG_OVERFLOW0			_VECTOR(2)
 
@@ -181,7 +183,7 @@
 
 /* Constants */
 #define RAMEND     0xDF
-#define XRAMEND    0xDF
+#define XRAMEND    RAMEND
 #define E2END      0x7F
 #define E2PAGESIZE 0
 #define FLASHEND   0x07FF

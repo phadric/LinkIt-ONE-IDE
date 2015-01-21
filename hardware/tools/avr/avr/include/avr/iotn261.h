@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn261.h,v 1.3.2.5 2008/10/17 23:27:52 arcanum Exp $ */
+/* $Id: iotn261.h 2115 2010-04-05 23:19:53Z arcanum $ */
 
 /* avr/iotn261.h - definitions for ATtiny261 */
 
@@ -38,8 +38,9 @@
 #include <avr/iotnx61.h>
 
 #define SPM_PAGESIZE 32
+#define RAMSTART     (0x60)
 #define RAMEND       0xDF
-#define XRAMEND      0xDF
+#define XRAMEND      RAMEND
 #define E2END        0x7F
 #define E2PAGESIZE   4
 #define FLASHEND     0x7FF
