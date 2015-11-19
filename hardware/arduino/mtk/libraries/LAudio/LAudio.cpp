@@ -20,7 +20,7 @@
 #include "vmchset.h"
 #include "vmstdlib.h"
 #include "LAudio.h"
-#include "audio.h"
+#include "Audio.h"
 
 static int status_result = 0 ;
 
